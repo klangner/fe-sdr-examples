@@ -1,0 +1,7 @@
+[package]
+name = "radio-signal"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+futuresdr = { version = "0.0.7", features = ["audio"] }
