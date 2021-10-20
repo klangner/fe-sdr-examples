@@ -5,13 +5,12 @@
         <title>FutureSDR Web Interface</title>
         <link rel="stylesheet" href="/css/futuresdr.css">
         <script type="module">
-            import init, {add_slider_u32, add_freq, app} from "./wasm.js"
+            import init, {add_slider_u32, add_freq, add_time, app} from "./wasm.js"
 
             const runWasm = async () => {
                 const rustWasm = await init();
-                add_freq("#freq", "ws://localhost:9001");
-                add_slider_u32("#freq_slider", "http://localhost:1337", 0, 0, 800000000, 900000000, 1000000);
-                app("#app");
+                add_freq("#plot", "ws://localhost:9001");
+                // app("#app");
             };
 
             runWasm();
@@ -24,7 +23,7 @@
         </style>
     </head>
     <body>
-        <div id="freq"></div>
+        <div id="plot"></div>
         <div id="freq_slider"></div>
         <div id="app"></div>
     </body>
