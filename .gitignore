@@ -1,2 +1,4 @@
 target/
 *.lock
+dist
+node_modules
